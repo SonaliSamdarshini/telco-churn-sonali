@@ -1,0 +1,214 @@
+{
+  "project": {
+    "title": "Customer Retention Radar",
+    "student_name": "Sonali Samdarshini",
+    "bits_id": "2025AC05254",
+    "assignment": "Machine Learning Assignment 2"
+  },
+  "dataset": {
+    "name": "Telco Customer Churn",
+    "source_url": "https://www.kaggle.com/datasets/blastchar/telco-customer-churn",
+    "raw_rows": 7043,
+    "raw_columns": 21,
+    "model_feature_count": 19,
+    "target_counts": {
+      "No": 5174,
+      "Yes": 1869
+    },
+    "blank_total_charges": 11,
+    "duplicate_rows": 0
+  },
+  "split": {
+    "random_state": 42,
+    "test_size": 0.2,
+    "training_rows": 5634,
+    "test_rows": 1409,
+    "training_positive_rate": 0.2653532126375577,
+    "test_positive_rate": 0.2654364797728886,
+    "test_data_sha256": "2e2634913de349f17ddae5151155d54856aa637e6b0875f274cc590252d8a8ac"
+  },
+  "schema": {
+    "id_column": "customerID",
+    "target_column": "Churn",
+    "feature_order": [
+      "gender",
+      "SeniorCitizen",
+      "Partner",
+      "Dependents",
+      "tenure",
+      "PhoneService",
+      "MultipleLines",
+      "InternetService",
+      "OnlineSecurity",
+      "OnlineBackup",
+      "DeviceProtection",
+      "TechSupport",
+      "StreamingTV",
+      "StreamingMovies",
+      "Contract",
+      "PaperlessBilling",
+      "PaymentMethod",
+      "MonthlyCharges",
+      "TotalCharges"
+    ],
+    "numeric_features": [
+      "SeniorCitizen",
+      "tenure",
+      "MonthlyCharges",
+      "TotalCharges"
+    ],
+    "categorical_features": [
+      "gender",
+      "Partner",
+      "Dependents",
+      "PhoneService",
+      "MultipleLines",
+      "InternetService",
+      "OnlineSecurity",
+      "OnlineBackup",
+      "DeviceProtection",
+      "TechSupport",
+      "StreamingTV",
+      "StreamingMovies",
+      "Contract",
+      "PaperlessBilling",
+      "PaymentMethod"
+    ],
+    "categorical_values": {
+      "gender": [
+        "Female",
+        "Male"
+      ],
+      "Partner": [
+        "No",
+        "Yes"
+      ],
+      "Dependents": [
+        "No",
+        "Yes"
+      ],
+      "PhoneService": [
+        "No",
+        "Yes"
+      ],
+      "MultipleLines": [
+        "No",
+        "No phone service",
+        "Yes"
+      ],
+      "InternetService": [
+        "DSL",
+        "Fiber optic",
+        "No"
+      ],
+      "OnlineSecurity": [
+        "No",
+        "No internet service",
+        "Yes"
+      ],
+      "OnlineBackup": [
+        "No",
+        "No internet service",
+        "Yes"
+      ],
+      "DeviceProtection": [
+        "No",
+        "No internet service",
+        "Yes"
+      ],
+      "TechSupport": [
+        "No",
+        "No internet service",
+        "Yes"
+      ],
+      "StreamingTV": [
+        "No",
+        "No internet service",
+        "Yes"
+      ],
+      "StreamingMovies": [
+        "No",
+        "No internet service",
+        "Yes"
+      ],
+      "Contract": [
+        "Month-to-month",
+        "One year",
+        "Two year"
+      ],
+      "PaperlessBilling": [
+        "No",
+        "Yes"
+      ],
+      "PaymentMethod": [
+        "Bank transfer (automatic)",
+        "Credit card (automatic)",
+        "Electronic check",
+        "Mailed check"
+      ]
+    },
+    "numeric_summary": {
+      "SeniorCitizen": {
+        "min": 0.0,
+        "max": 1.0,
+        "median": 0.0
+      },
+      "tenure": {
+        "min": 0.0,
+        "max": 72.0,
+        "median": 29.0
+      },
+      "MonthlyCharges": {
+        "min": 18.4,
+        "max": 118.75,
+        "median": 70.5
+      },
+      "TotalCharges": {
+        "min": 18.85,
+        "max": 8684.8,
+        "median": 1398.125
+      }
+    },
+    "target_mapping": {
+      "No": 0,
+      "Yes": 1
+    }
+  },
+  "models": {
+    "order": [
+      "Logistic Regression",
+      "Decision Tree",
+      "kNN",
+      "Naive Bayes",
+      "Random Forest"
+    ],
+    "files": {
+      "Logistic Regression": "logistic_regression.joblib",
+      "Decision Tree": "decision_tree.joblib",
+      "kNN": "knn.joblib",
+      "Naive Bayes": "naive_bayes.joblib",
+      "Random Forest": "random_forest.joblib"
+    },
+    "default_threshold": 0.5,
+    "positive_class": 1
+  },
+  "observations": {
+    "Logistic Regression": "Strong balanced baseline with the highest combined rank across accuracy, F1, and MCC. Its coefficients are also easier to explain than tree ensembles.",
+    "Decision Tree": "Competitive and interpretable, but a single tree is more sensitive to the chosen depth and can be less stable than an ensemble.",
+    "kNN": "Scaling is essential because prediction is distance based. It gives competitive F1 but stores the training observations and is slower at prediction time than parametric models.",
+    "Naive Bayes": "Produces the highest recall (0.8369) but many more false positives, which lowers precision and accuracy.",
+    "Random Forest": "Provides the best AUC (0.8443) and strong precision while reducing the variance of a single tree.",
+    "Overall Winner": "Logistic Regression. It has the best average rank over Accuracy, AUC, F1, and MCC. Random Forest remains attractive when ranking quality measured by AUC is the main priority.",
+    "Best AUC Model": "Random Forest",
+    "Best Recall Model": "Naive Bayes",
+    "Best Precision Model": "Random Forest"
+  },
+  "environment": {
+    "python": "3.13.14",
+    "pandas": "2.2.3",
+    "numpy": "2.3.5",
+    "scikit_learn": "1.8.0",
+    "joblib": "1.5.3",
+    "trained_at_utc": "2026-07-22T17:39:09.354213+00:00"
+  }
+}
