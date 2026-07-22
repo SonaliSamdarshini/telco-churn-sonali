@@ -8,8 +8,8 @@
 
 ## Submission links
 
-- **GitHub repository:** `REPLACE_WITH_SONALI_GITHUB_REPOSITORY_URL`
-- **Live Streamlit app:** `REPLACE_WITH_SONALI_STREAMLIT_APP_URL`
+- **GitHub repository:** https://github.com/SonaliSamdarshini/telco-churn-sonali
+- **Live Streamlit app:** https://telco-churn-sonali.streamlit.app/
 
 Replace both placeholders after the repository is pushed and the application is deployed.
 
@@ -186,8 +186,6 @@ sonali_telco_churn_complete/
 |-- ml_workflow.py
 |-- utils.py
 |-- README.md
-|-- EXECUTION_GUIDE.md
-|-- SUBMISSION_CHECKLIST.md
 |-- requirements.txt
 |-- requirements-dev.txt
 |-- metrics.csv
@@ -209,8 +207,6 @@ sonali_telco_churn_complete/
 |   `-- telco_churn_experiments.ipynb
 |-- tests/
 |   `-- test_project.py
-|-- docs/
-|   `-- ORIGINAL_PROJECT_REVIEW.md
 `-- .streamlit/
     `-- config.toml
 ```
